@@ -1,0 +1,204 @@
+/* ================================================================
+   Configuração Base
+   - Importação de fontes e definição de variáveis de cor.
+   ================================================================ */
+
+/* Definição da Fonte Local (Gabarito) */
+@font-face {
+    font-family: 'Gabarito';
+    src: url('fonts/Gabarito-Regular.woff2') format('woff2'); /* Regular */
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gabarito';
+    src: url('fonts/Gabarito-SemiBold.woff2') format('woff2'); /* SemiBold */
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Gabarito';
+    src: url('fonts/Gabarito-Black.woff2') format('woff2'); /* Black */
+    font-weight: 800; /* Gabarito Black é mais pesado, 800 ou 900 é adequado */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Variáveis de Cor do Manual de Marca */
+:root {
+    --color-primary: #002D72;   /* Azul Sevencard */
+    --color-secondary: #FF7A00; /* Laranja Sevencard */
+    --color-light: #FFFFFF;     /* Branco */
+    --color-background: #f8fafc; /* Um cinza muito claro para o fundo */
+    --color-text: #494949;      /* Cinza escuro para texto */
+}
+
+/* ================================================================
+   Classes de Utilitários de Fonte e Cor
+   ================================================================ */
+
+body {
+    font-family: 'Gabarito', sans-serif;
+    font-weight: 400; /* Regular por padrão */
+    overflow-x: hidden; /* Previne scroll horizontal dos elementos de fundo */
+}
+
+/* Cores */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-light { background-color: var(--color-light); }
+.bg-main-background { background-color: var(--color-background); }
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-light { color: var(--color-light); }
+.text-main { color: var(--color-text); }
+
+/* Variações de Fonte */
+.font-title {
+    font-family: 'Gabarito', sans-serif;
+    font-weight: 800; /* Black */
+}
+
+.font-subtitle {
+    font-family: 'Gabarito', sans-serif;
+    font-weight: 600; /* SemiBold */
+}
+
+/* ================================================================
+   Estilos Criativos Adicionais
+   ================================================================ */
+
+/* Fundo com elementos animados para o modo claro */
+.creative-bg-light {
+    background-color: var(--color-background);
+    position: relative;
+    z-index: 0;
+}
+
+/* Formas de fundo (blobs) */
+body.creative-bg-light::before,
+body.creative-bg-light::after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Blob Azul */
+body.creative-bg-light::before {
+    background-color: rgba(0, 45, 114, 0.1);
+    width: 35vw;
+    height: 35vw;
+    min-width: 300px;
+    min-height: 300px;
+    top: -10vh;
+    left: -10vw;
+    animation: float 8s ease-in-out infinite alternate;
+}
+
+/* Blob Laranja */
+body.creative-bg-light::after {
+    background-color: rgba(255, 122, 0, 0.1);
+    width: 40vw;
+    height: 40vw;
+    min-width: 350px;
+    min-height: 350px;
+    bottom: -15vh;
+    right: -15vw;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+/* Animação de flutuação para os blobs */
+@keyframes float {
+    0% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-30px) translateX(15px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Fundo com padrão sutil para o modo escuro */
+.dark body {
+    background-color: #0d1a2e; /* Um azul quase preto para mais profundidade */
+    background-image: radial-gradient(circle at 1% 1%, rgba(255, 122, 0, 0.1) 0%, transparent 25%),
+                      radial-gradient(circle at 99% 99%, rgba(0, 45, 114, 0.2) 0%, transparent 30%);
+}
+
+/* Oculta os blobs de fundo no modo escuro */
+.dark body.creative-bg-light::before,
+.dark body.creative-bg-light::after {
+    opacity: 0;
+}
+
+/* Estilo de Botão Criativo com Gradiente */
+.btn-creative {
+    background-image: linear-gradient(to right, var(--color-secondary) 0%, #ff9a40 100%);
+    box-shadow: 0 4px 15px 0 rgba(255, 122, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+    background-size: 200% auto;
+    border: none;
+    color: white !important; /* Garante que o texto seja branco */
+}
+
+.btn-creative:hover {
+    background-position: right center; /* Anima o gradiente */
+    transform: scale(1.05); /* Efeito de zoom */
+    box-shadow: 0 6px 20px 0 rgba(255, 122, 0, 0.5);
+}
+
+/* Cards com mais interatividade */
+.card-creative {
+    border: 1px solid #e5e7eb; /* Borda sutil padrão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .card-creative {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-creative:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px -5px rgba(0, 45, 114, 0.1), 0 8px 10px -6px rgba(0, 45, 114, 0.1);
+    border-color: var(--color-secondary);
+}
+
+.dark .card-creative:hover {
+    box-shadow: 0 10px 25px -5px rgba(255, 122, 0, 0.1), 0 8px 10px -6px rgba(255, 122, 0, 0.1);
+}
+
+/* Ícones dos cards com animação e gradiente */
+.card-creative .icon-container {
+    transition: transform 0.3s ease;
+    background-image: linear-gradient(to top right, var(--color-secondary), #ff9a40);
+}
+
+.card-creative:hover .icon-container {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Efeito de underline animado para links do menu */
+.nav-link-creative {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link-creative::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link-creative:hover::after {
+    width: 100%;
+}
+

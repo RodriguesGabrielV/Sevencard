@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Sevencard - Adesivos, Brindes e Credenciais Personalizadas</title>
+    <meta name="description" content="Com mais de 24 anos de experiência, a Sevencard é sua parceira estratégica em brindes de impacto, adesivos de alta qualidade e credenciais para eventos memoráveis.">
+    <meta name="keywords" content="gráfica, adesivos personalizados, brindes corporativos, credenciais para eventos, sevencard, comunicação visual">
+    <meta name="author" content="SEVENCARD">
+
+    <!-- Favicon (substitua pelos seus arquivos) -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuração para habilitar o dark mode via classe no HTML
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    
+    <!-- Ícones (Feather Icons) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <!-- Script para evitar "flash" do tema incorreto ao carregar -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body class="bg-light text-main antialiased creative-bg-light dark:bg-gray-900 dark:text-gray-300">
+
+    <!-- CABEÇALHO -->
+    <header id="home" class="bg-light/80 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300 dark:bg-primary/80">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-2">
+                <!-- LOGO MODO CLARO: Escolha o arquivo .png da sua pasta 'assets/logos' -->
+                <img src="assets/logos/01.png" alt="Logo Sevencard" class="h-8 w-auto block dark:hidden">
+                
+                <!-- LOGO MODO ESCURO: Escolha a versão branca/clara do logo .png -->
+                <img src="assets/logos/02.png" alt="Logo Sevencard" class="h-8 w-auto hidden dark:block">
+
+                <span class="font-title text-2xl text-primary dark:text-light">SEVENCARD</span>
+            </a>
+            <div class="flex items-center">
+                <div class="hidden lg:flex items-center space-x-8 mr-8">
+                    <a href="#servicos" class="nav-link-creative text-main transition duration-300 font-subtitle dark:text-gray-300 dark:hover:text-secondary">Serviços</a>
+                    <a href="#portfolio" class="nav-link-creative text-main transition duration-300 font-subtitle dark:text-gray-300 dark:hover:text-secondary">Portfólio</a>
+                    <a href="#sobre" class="nav-link-creative text-main transition duration-300 font-subtitle dark:text-gray-300 dark:hover:text-secondary">Sobre Nós</a>
+                    <a href="#orcamento" class="btn-creative text-light font-subtitle py-2 px-5 rounded-lg">
+                        Solicitar Orçamento
+                    </a>
+                </div>
+                <!-- Botão de Troca de Tema -->
+                <button id="theme-toggle" type="button" class="text-primary dark:text-yellow-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2">
+                    <i id="theme-toggle-sun" data-feather="sun" class="w-6 h-6 hidden"></i>
+                    <i id="theme-toggle-moon" data-feather="moon" class="w-6 h-6 hidden"></i>
+                </button>
+                <button id="mobile-menu-button" class="lg:hidden text-primary dark:text-light ml-4">
+                    <i data-feather="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-light px-6 pb-4 dark:bg-primary">
+            <a href="#servicos" class="block py-2 text-main hover:text-secondary font-subtitle dark:text-gray-300 dark:hover:text-secondary">Serviços</a>
+            <a href="#portfolio" class="block py-2 text-main hover:text-secondary font-subtitle dark:text-gray-300 dark:hover:text-secondary">Portfólio</a>
+            <a href="#sobre" class="block py-2 text-main hover:text-secondary font-subtitle dark:text-gray-300 dark:hover:text-secondary">Sobre Nós</a>
+            <a href="#orcamento" class="block mt-2 text-center btn-creative text-light font-subtitle py-2 px-4 rounded-lg">
+                Solicitar Orçamento
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO -->
+        <section class="bg-transparent pt-24 pb-28 dark:bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="font-title text-4xl md:text-6xl text-primary leading-tight mb-4 dark:text-light">
+                    Materializando conexões, <br class="hidden md:block">
+                    criando experiências memoráveis.
+                </h1>
+                <p class="text-lg md:text-xl text-main max-w-3xl mx-auto mb-10 dark:text-gray-300">
+                    Há mais de 24 anos ajudando marcas a se destacarem com brindes, adesivos e credenciais de impacto e alta qualidade.
+                </p>
+                <a href="#orcamento" class="inline-block btn-creative text-light font-subtitle py-4 px-8 rounded-lg text-lg">
+                    Fale com um especialista
+                </a>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE SERVIÇOS -->
+        <section id="servicos" class="py-20 dark:bg-primary">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="font-title text-3xl md:text-4xl text-primary dark:text-light">Nossas Soluções Criativas</h2>
+                    <p class="text-main mt-2 text-lg dark:text-gray-300">Qualidade e agilidade para cada necessidade do seu projeto.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card-creative bg-light p-8 rounded-xl text-center dark:bg-gray-800">
+                        <div class="icon-container inline-block p-4 rounded-full mb-5">
+                            <i data-feather="star" class="text-light w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-subtitle text-2xl text-primary mb-3 dark:text-light">Adesivos Personalizados</h3>
+                        <p class="text-main dark:text-gray-300">
+                            Adesivos em vinil, BOPP, e mais, com recortes especiais para rótulos, produtos e comunicação visual.
+                        </p>
+                    </div>
+                    <div class="card-creative bg-light p-8 rounded-xl text-center dark:bg-gray-800">
+                        <div class="icon-container inline-block p-4 rounded-full mb-5">
+                            <i data-feather="gift" class="text-light w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-subtitle text-2xl text-primary mb-3 dark:text-light">Brindes Corporativos</h3>
+                        <p class="text-main dark:text-gray-300">
+                            Fortaleça sua marca com brindes de impacto. Canetas, chaveiros, squeezes e um catálogo completo de opções.
+                        </p>
+                    </div>
+                    <div class="card-creative bg-light p-8 rounded-xl text-center dark:bg-gray-800">
+                        <div class="icon-container inline-block p-4 rounded-full mb-5">
+                            <i data-feather="user-check" class="text-light w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-subtitle text-2xl text-primary mb-3 dark:text-light">Credenciais para Eventos</h3>
+                        <p class="text-main dark:text-gray-300">
+                           Identificação profissional para seu evento. Credenciais em PVC ou papel com dados variáveis e acessórios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PORTFÓLIO -->
+        <section id="portfolio" class="py-20 bg-transparent dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="font-title text-3xl md:text-4xl text-primary dark:text-light">Nossa Qualidade em Ação</h2>
+                    <p class="text-main mt-2 text-lg dark:text-gray-300">Confira alguns dos projetos que tivemos o prazer de realizar.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Imagens do Portfólio Corrigidas -->
+                    <div class="bg-light rounded-lg shadow-md overflow-hidden group dark:bg-gray-800"><img src="assets/images/credenciais-placeholder.png" alt="[Imagem de Credenciais para evento corporativo]" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-5"><h3 class="font-subtitle text-lg text-primary dark:text-light">Credenciais para Congresso</h3><p class="text-sm text-main dark:text-gray-300">Summit de Tecnologia 2024</p></div></div>
+                    <div class="bg-light rounded-lg shadow-md overflow-hidden group dark:bg-gray-800"><img src="assets/images/adesivo-placeholder.png" alt="[Imagem de Adesivos para embalagens de confeitaria]" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-5"><h3 class="font-subtitle text-lg text-primary dark:text-light">Adesivos para Embalagens</h3><p class="text-sm text-main dark:text-gray-300">Doce Sabor Confeitaria</p></div></div>
+                    <div class="bg-light rounded-lg shadow-md overflow-hidden group dark:bg-gray-800"><img src="assets/images/brindes-placeholder.png" alt="[Imagem de Squeezes personalizados para academia]" class="w-full h-60 object-cover group-hover:scale-105 transition-transform duration-300"><div class="p-5"><h3 class="font-subtitle text-lg text-primary dark:text-light">Squeezes Personalizados</h3><p class="text-sm text-main dark:text-gray-300">Academia Corpo em Ação</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE NÓS -->
+        <section id="sobre" class="py-20 dark:bg-primary">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col items-center text-center">
+                    <div class="max-w-3xl">
+                        <h2 class="font-title text-3xl md:text-4xl text-primary mb-4 dark:text-light">Confiança e Inovação <br>Há mais de 24 anos.</h2>
+                        <p class="text-main mb-8 text-lg dark:text-gray-300">A Sevencard se consolidou como uma parceira estratégica para empresas que buscam fortalecer sua presença e criar experiências memoráveis. Unimos a seriedade e a confiança de quem entende do mercado com a inovação que cada marca precisa para ser inesquecível.</p>
+                        <div class="flex justify-center space-x-8 md:space-x-16">
+                            <div>
+                                <span class="font-title text-4xl text-secondary">24+</span>
+                                <p class="font-subtitle text-main dark:text-light">Anos de Mercado</p>
+                            </div>
+                            <div>
+                                <span class="font-title text-4xl text-secondary">100%</span>
+                                <p class="font-subtitle text-main dark:text-light">Compromisso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE ORÇAMENTO -->
+        <section id="orcamento" class="py-20 bg-primary dark:bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-title text-3xl md:text-4xl text-light">Vamos dar vida ao seu projeto?</h2>
+                <p class="text-gray-300 mt-2 mb-8 text-lg max-w-2xl mx-auto">Nossa equipe de especialistas está pronta para desenvolver a melhor solução para sua marca ou evento.</p>
+                <a id="whatsapp-link" href="#" target="_blank" class="inline-block btn-creative text-light font-subtitle py-4 px-8 rounded-lg text-lg">
+                     <i data-feather="message-circle" class="inline-block mr-2 -mt-1"></i>
+                     Solicitar Orçamento no WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-light text-main dark:bg-primary">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                <div class="md:col-span-2">
+                    <h3 class="font-title text-xl text-primary mb-4 dark:text-light">SEVENCARD</h3>
+                    <p class="dark:text-gray-300">Conectando marcas e eventos com soluções criativas e de alta qualidade.</p>
+                </div>
+                <div>
+                    <h3 class="font-subtitle text-lg text-primary mb-4 dark:text-light">Contato</h3>
+                    <ul class="space-y-2 dark:text-gray-300">
+                        <li><a href="mailto:contato@sevencard.com.br" class="hover:text-secondary">contato@sevencard.com.br</a></li>
+                        <li><a href="#" class="hover:text-secondary">(11) 94055-7946</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-subtitle text-lg text-primary mb-4 dark:text-light">Siga-nos</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 dark:text-gray-300">
+                        <a href="#" aria-label="Instagram" class="hover:text-secondary transition duration-300"><i data-feather="instagram" class="h-6 w-6"></i></a>
+                        <a href="#" aria-label="Facebook" class="hover:text-secondary transition duration-300"><i data-feather="facebook" class="h-6 w-6"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="hover:text-secondary transition duration-300"><i data-feather="linkedin" class="h-6 w-6"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-6 text-center text-sm dark:border-gray-700">
+                <p class="dark:text-gray-400">&copy; <span id="current-year"></span> Sevencard. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
+
